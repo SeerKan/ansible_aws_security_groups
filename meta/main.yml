@@ -4,7 +4,15 @@ galaxy_info:
   license: MIT
   min_ansible_version: 2.0
 
-  platforms: []
+  platforms:
+  - name: AWS
+    versions:
+    - all
+  categories:
+  - system
+  - development
+  - cloud:ec2
+  - networking
 
   galaxy_tags:
     - AWS
