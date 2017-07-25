@@ -5,7 +5,7 @@ For more detailed on information on the creating EC2 Security Groups with Ansibl
 
 Role Variables
 --------------
-
+```
 aws_access_key - optional if boto is used
 aws_secret_key - optional if boto is used
 region - mandatory
@@ -19,12 +19,13 @@ aws_security_groups:
         to_port: - mandatory
         cidr_ip: or group_id: - mandatory
     out_rules: - optional, will default to all from 0.0.0.0/0
-        
+```        
         
 This role will purge all security groups not present in the variables, so to remove a security group or rule just remove it from the variables
 
 
 Variables example:
+--------------
 ```
 aws_access_key: ufaggufaguafsiugademo
 aws_secret_key: ha7t6agsgfasjfgasygfasugfiasufdemo
