@@ -1,0 +1,15 @@
+---
+- name: Provision EC2 security groups
+  local_action:
+    module: ec2_group
+    region: "{{ region }}"
+    aws_access_key: "{{ aws_access_key | default(omit) }}"
+    aws_secret_key: "{{ aws_secret_key | default(omit) }}"
+    vpc_id: "{{ vpcid }}"
+    purge_rules: yes
+    name: "{{ item.name }}"
+    description: "{{ item.description }}"
+    state: present
+    rules: "{{ item.in_rules }}"
+    rules_egress: "{{ item.out_rules | default(default_out_rules) }}"
+  with_items: "{{ aws_security_groups }}"

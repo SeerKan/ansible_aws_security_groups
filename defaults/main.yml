@@ -1,0 +1,15 @@
+default_out_rules:
+  - proto: all
+    cidr_ip: 0.0.0.0/0
+
+aws_security_groups:
+  - name: "{{ env }}_sg_ssh"
+    description: security group for ssh
+    in_rules:
+      - proto: tcp
+        from_port: 22
+        to_port: 22
+        cidr_ip: 0.0.0.0/0
+    out_rules:
+      - proto: all
+        cidr_ip: 0.0.0.0/0
