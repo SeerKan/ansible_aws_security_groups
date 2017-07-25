@@ -1,6 +1,7 @@
 default_out_rules:
   - proto: all
     cidr_ip: 0.0.0.0/0
+env: test
 
 aws_security_groups:
   - name: "{{ env }}_sg_ssh"
